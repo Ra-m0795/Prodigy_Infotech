@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp°Check</title>
+    <script src="./script/global.js" defer></script>
+    <script src="./script/index.js" defer></script>
+    <link rel="icon" href="./icons/static/cloudy-day-1.svg">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header-footer.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="bg-image"></div>
+
+    <header>
+        <div id="header-left" class="header-box-container align-center">
+            <img src="icons/animated/cloudy-day-1.svg" alt="Logo">
+            <h1 id="header-logo-text" class="text-no-wrap text-">Temp<span>°Check</span></h1>
+        </div>
+        <div id="header-right" class="header-box-container align-center">
+            
+            <!-- Desktop header -->
+            <div id="header-desktop">
+                <div class="box align-center switch-container">
+                    <div class="theme-icon theme-switch-icon"></div>
+                    <label class="switch">
+                        <input type="checkbox" class="theme-toggle-button">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Header mobile -->
+            <div id="header-mobile">
+                <img id="menu-button" src="./icons/static/header-icon-menu.svg" alt="menu" onclick="toggleDropdownMenu()">
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile dropdown menu -->
+    <nav id="dropdown-menu" class="dropdown-menu-wrapper hidden">
+        <div class="dropdown-menu transparent-gradiant-menu">
+            <div class="box align-center switch-container">
+                <div class="theme-icon theme-switch-icon"></div>
+                <label class="switch">
+                    <input type="checkbox" class="theme-toggle-button">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+    </nav>
+
+    <main class="sign-in-page">
+        <section class="sign-in-container transparent-blurred box-shadow">
+            <div class="sign-up-text">
+                <h2 class="text-center text-no-wrap no-select">Sign in</h2>
+            </div>
+            <form id="userLogin" onsubmit="onUserLogin(event)">
+                <div class="form-elements">
+                    <label class="no-select" for="username">Name</label>
+                    <input 
+                        class="input-default"
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        maxlength="30" 
+                        minlength="3" 
+                        autocomplete="off" 
+                        required>
+                    <span id="username-icon" class="input-icon no-select"></span>
+                </div>
+                <div class="form-elements">
+                    <label class="no-select" for="password">Password</label>
+                    <input 
+                        class="input-default"
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        maxlength="30" 
+                        minlength="3" 
+                        autocomplete="off" 
+                        required>
+                    <span id="password-icon" class="input-icon no-select"></span>
+                </div>
+                <div id="button-container">
+                    <input id="submit-button" type="submit" value="Sign in" class="box-shadow">
+                </div>
+                <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" rel="noopener noreferrer">
+                    <p id="forgot-password" class="text-center text-no-wrap no-select">Forgot Password?</p>
+                </a>
+            </form>
+        </section>
+    </main>
+
+    <footer class="transparent-blurred">
+        <div>
+            <ul> 
+                <li><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" rel="noopener noreferrer">
+                    <img class="footer-icons" src="./icons/static/footer_github.svg" alt="Github"></a>
+                </li>
+                <li><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" rel="noopener noreferrer">
+                    <img class="footer-icons" src="./icons/static/footer_instagram.svg" alt="Instagram"></a>
+                </li>
+                <li><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" rel="noopener noreferrer">
+                    <img class="footer-icons" src="./icons/static/footer_facebook.svg" alt="Facebook"></a>
+                </li>
+                <li><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" rel="noopener noreferrer">
+                    <img class="footer-icons" src="./icons/static/footer_linkedin.svg" alt="LinkedIn"></a>
+                </li>
+            </ul>
+            <p class="text-center no-select">© Temp°Check</p>
+        </div>
+    </footer>
+</body>
+</html>
