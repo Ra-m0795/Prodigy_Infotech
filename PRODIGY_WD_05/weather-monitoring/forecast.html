@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp°Check</title>
+    <script src="./script/global.js" defer></script>
+    <script src="./script/forecast.js" defer></script>
+    <link rel="icon" href="./icons/static/cloudy-day-1.svg">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header-footer.css">
+    <link rel="stylesheet" href="./css/forecast.css">
+</head>
+
+<body>
+    <div class="bg-image"></div>
+
+    <header>
+        <div id="header-left" class="header-box-container align-center">
+            <img src="icons/animated/cloudy-day-1.svg" alt="Logo">
+            <h1 id="header-logo-text" class="text-no-wrap text-">Temp<span>°Check</span></h1>
+        </div>
+        <div id="header-right" class="header-box-container align-center">
+
+            <!-- Desktop header -->
+            <div id="header-desktop">
+                <!-- Forecast -->
+                <div id="box-forecast" class="box page-link align-center text-underline">
+                    <img class="align-center header-icons header-icon-1" src="icons/static/header-icon-sun.svg" alt="|">
+                    <a class="text-bold text-no-wrap" href="./forecast.html">Forecast</a>
+                </div>
+
+                <!-- VS -->
+                <div class="box page-link align-center">
+                    <img class="align-center header-icons header-icon-2" src="icons/static/header-icon-compare.svg"
+                        alt="|">
+                    <a class="text-bold text-no-wrap" href="./compare.html">Compare</a>
+                </div>
+
+                <!-- Sign out -->
+                <div class="box page-link align-center">
+                    <img class="align-center header-icons header-icon-3" src="icons/static/cloudy-night-1.svg" alt="|">
+                    <a class="text-bold text-no-wrap" href="./index.html">Sign out</a>
+                </div>
+
+                <!-- Theme button -->
+                <div class="box align-center switch-container">
+                    <div class="theme-icon theme-switch-icon"></div>
+                    <label class="switch">
+                        <input type="checkbox" class="theme-toggle-button">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Header mobile -->
+            <div id="header-mobile">
+                <img id="menu-button" src="./icons/static/header-icon-menu.svg" alt="menu"
+                    onclick="toggleDropdownMenu()">
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile dropdown menu -->
+    <nav id="dropdown-menu" class="dropdown-menu-wrapper hidden">
+        <div class="dropdown-menu transparent-gradiant-menu">
+            <!-- Forecast -->
+            <div class="box page-link align-center text-underline">
+                <img class="align-center header-icons header-icon-1" src="icons/static/header-icon-sun.svg" alt="|">
+                <a class="text-bold text-no-wrap" href="./forecast.html">Forecast</a>
+            </div>
+
+            <!-- VS -->
+            <div class="box page-link align-center">
+                <img class="align-center header-icons header-icon-2" src="icons/static/header-icon-compare.svg" alt="|">
+                <a class="text-bold text-no-wrap" href="./compare.html">Compare</a>
+            </div>
+
+            <!-- Sign out -->
+            <div class="box page-link align-center">
+                <img class="align-center header-icons header-icon-3" src="icons/static/cloudy-night-1.svg" alt="|">
+                <a class="text-bold text-no-wrap" href="./index.html">Sign out</a>
+            </div>
+
+            <!-- Theme button -->
+            <div class="box align-center switch-container">
+                <div class="theme-icon theme-switch-icon"></div>
+                <label class="switch">
+                    <input type="checkbox" class="theme-toggle-button">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+    </nav>
+    <!-- THE MAIN PAGE -->
+    <main class="main-page">
+        <div class="top-section">
+            <div class="weather-container box-shadow">
+                <div class="input-field">
+                    <input type="text" id="city-input" maxlength="25" minlength="2" autocomplete="off"
+                        placeholder="Location">
+                    <button id="weather-button" onclick="WeatherData()">Search</button>
+                </div>
+
+                <div id="display-info">Information will be displayed here</div>
+
+                <div class="toggle-buttons-container">
+                    <button id="show-hourly" class="toggle-buttons active-button"
+                        onclick="showForecast('hourly')">Hourly</button>
+                    <button id="show-daily" class="toggle-buttons" onclick="showForecast('daily')">Daily</button>
+                    <button id="show-current" class="toggle-buttons" onclick="showForecast('current')">Info</button>
+                </div>
+
+                <div id="hourly-forecast" class="forecast-section" style="display: flex;"></div>
+                <div id="daily-forecast" class="forecast-section" style="display: none;"></div>
+                <div id="current-info" class="forecast-section" style="display: none;"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="transparent-blurred box-shadow">
+        <div>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" rel="noopener noreferrer">
+                        <img class="footer-icons" src="./icons/static/footer_github.svg" alt="Github"></a>
+                </li>
+                <li><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" rel="noopener noreferrer">
+                        <img class="footer-icons" src="./icons/static/footer_instagram.svg" alt="Instagram"></a>
+                </li>
+                <li><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" rel="noopener noreferrer">
+                        <img class="footer-icons" src="./icons/static/footer_facebook.svg" alt="Facebook"></a>
+                </li>
+                <li><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" rel="noopener noreferrer">
+                        <img class="footer-icons" src="./icons/static/footer_linkedin.svg" alt="LinkedIn"></a>
+                </li>
+            </ul>
+            <p class="text-center no-select">© Temp°Check</p>
+        </div>
+    </footer>
+</body>
+</html>
